@@ -1,15 +1,27 @@
 <template>
-  <div id="app">
-    <div>
-      <label>Brew for</label>
-      <input ref="brewFor" v-model="brewFor" />
-    </div>
-    <div>
-      <label>Cool for</label>
-      <input ref="coolFor" v-model="coolFor" />
-    </div>
+  <div id="app" class="container">
+    <div class="columns">
+      <div class="column" />
+      <div class="column is-three-fifths">
+        <section class="section">
+          <div class="field">
+            <label class="label">Brew for</label>
+            <div class="control">
+              <input class="input" ref="brewFor" v-model="brewFor" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Total time (brew + cool down time)</label>
+            <div class="control">
+              <input class="input" ref="totalTime" v-model="totalTime" />
+            </div>
+          </div>
+        </section>
 
-    <component :is="step" :nextStep="nextStep" :brewFor="brewFor" />
+        <component class="has-text-centered" :is="step" :nextStep="nextStep" :brewFor="brewFor" />
+      </div>
+      <div class="column" />
+    </div>
   </div>
 </template>
 
@@ -27,7 +39,7 @@
       return {
         step: "prepare",
         brewFor: 3,
-        coolFor: 10,
+        totalTime: 10,
         msg: 'Welcome to Your Vue.js App'
       }
     },
@@ -42,25 +54,6 @@
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 a {
