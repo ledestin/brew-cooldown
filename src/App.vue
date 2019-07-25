@@ -4,16 +4,22 @@
       <div class="column" />
       <div class="column is-three-fifths">
         <section class="section">
-          <div class="field">
-            <label class="label">Brew for</label>
-            <div class="control">
-              <input class="input" ref="brewFor" v-model="brewFor" />
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Brew for</label>
+                <div class="control">
+                  <input class="input" ref="brewFor" v-model="brewFor" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <label class="label">Total time (brew + cool down time)</label>
-            <div class="control">
-              <input class="input" ref="totalTime" v-model="totalTime" />
+            <div class="column">
+              <div class="field">
+                <label class="label">Total time (brew + cool down time)</label>
+                <div class="control">
+                  <input class="input" ref="totalTime" v-model="totalTime" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
