@@ -65,4 +65,10 @@
 a {
   color: #42b983;
 }
+
+img {
+  object-fit: cover;
+  height: 60vh;
+  width: 400px;
+}
 </style>
