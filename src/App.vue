@@ -15,7 +15,7 @@
             </div>
             <div class="column">
               <div class="field">
-                <label class="label">Total time (brew + cool down time)</label>
+                <label class="label">Cooldown time (includes brew time)</label>
                 <div class="control">
                   <input type="number" class="input" ref="totalTime" v-model="totalTime" />
                 </div>
