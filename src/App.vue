@@ -9,7 +9,7 @@
               <div class="field">
                 <label class="label">Brew for</label>
                 <div class="control">
-                  <input class="input" ref="brewFor" v-model="brewFor" />
+                  <input type="number" class="input" ref="brewFor" v-model="brewFor" />
                 </div>
               </div>
             </div>
@@ -17,7 +17,7 @@
               <div class="field">
                 <label class="label">Total time (brew + cool down time)</label>
                 <div class="control">
-                  <input class="input" ref="totalTime" v-model="totalTime" />
+                  <input type="number" class="input" ref="totalTime" v-model="totalTime" />
                 </div>
               </div>
             </div>
