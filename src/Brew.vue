@@ -2,14 +2,14 @@
   <div>
     <audio ref="SingleBell" loop>
       <source
-        src="./assets/sounds/415510__inspectorj__bell-counter-a.wav"
-        type="audio/wav"
+        src="./assets/sounds/415510__inspectorj__bell-counter-a.mp3"
+        type="audio/mp3"
       />
     </audio>
     <audio ref="Bells" loop>
       <source
-        src="./assets/sounds/68981__abel-k__copper-bell.wav"
-        type="audio/wav"
+        src="./assets/sounds/68981__abel-k__copper-bell.mp3"
+        type="audio/mp3"
       />
     </audio>
 
