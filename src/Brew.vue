@@ -55,7 +55,9 @@
   export default {
     name: 'brew',
     props: {
-      prepareNewBrew: Function
+      prepareNewBrew: Function,
+      brewForSeconds: Number,
+      cooldownForSeconds: Number
     },
     data () {
       return {
@@ -74,7 +76,7 @@
         setTimeout(() => {
           this.status = "ready"
           this.playSingleBell()
-        }, 3000)
+        }, this.cooldownForSeconds * 1000)
       },
       playBells() {
         this.$refs.Bells.play()
@@ -95,7 +97,7 @@
       setTimeout(() => {
         this.playBells()
         this.status = "removeLeaves"
-      }, 3000)
+      }, this.brewForSeconds * 1000)
     }
   }
 </script>

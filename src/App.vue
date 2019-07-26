@@ -28,7 +28,8 @@
           class="has-text-centered"
           :is="step"
           :nextStep="nextStep"
-          :brewFor="brewFor"
+          :brewForSeconds="brewForSeconds"
+          :cooldownForSeconds="cooldownForSeconds"
           :prepareNewBrew="prepareNewBrew" />
       </div>
       <div class="column" />
@@ -52,6 +53,14 @@
         brewFor: 3,
         cooldownFor: 10,
         msg: 'Welcome to Your Vue.js App'
+      }
+    },
+    computed: {
+      brewForSeconds() {
+        return this.brewFor * 60
+      },
+      cooldownForSeconds() {
+        return this.cooldownFor * 60
       }
     },
     methods: {
