@@ -72,11 +72,6 @@
       startCooling() {
         this.stopBells()
         this.status = "cooling"
-
-        setTimeout(() => {
-          this.status = "ready"
-          this.playSingleBell()
-        }, this.cooldownForSeconds * 1000)
       },
       playBells() {
         this.$refs.Bells.play()
@@ -98,6 +93,12 @@
         this.playBells()
         this.status = "removeLeaves"
       }, this.brewForSeconds * 1000)
+
+      setTimeout(() => {
+        this.status = "ready"
+        this.stopBells()
+        this.playSingleBell()
+      }, this.cooldownForSeconds * 1000)
     }
   }
 </script>
