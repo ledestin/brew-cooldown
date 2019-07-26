@@ -1,5 +1,18 @@
 <template>
   <div>
+    <audio ref="SingleBell" loop>
+      <source
+        src="./assets/sounds/415510__inspectorj__bell-counter-a.wav"
+        type="audio/wav"
+      />
+    </audio>
+    <audio ref="Bells" loop>
+      <source
+        src="./assets/sounds/68981__abel-k__copper-bell.wav"
+        type="audio/wav"
+      />
+    </audio>
+
     <div v-if="status === 'brewing'">
       <h1 class="title">Brewing...</h1>
       <img src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg">
@@ -15,7 +28,24 @@
       <img src="./assets/chinese-tea-2651717_1920.jpg">
     </div>
     <div v-else-if="status === 'ready'">
-      <h1 class="title"><button class="button is-primary">Stop the bell</button> and enjoy your drink</h1>
+      <h1 class="title">
+        <button
+          @click="enjoyYourDrink"
+          class="button is-primary">Stop the bell
+        </button>
+        and enjoy your drink
+      </h1>
+      <img src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
+    </div>
+    <div v-else-if="status === 'drinking'">
+      <h1 class="title">
+        After you've finished
+        <button
+          @click="prepareNewBrew"
+          class="button is-primary">Prepare a new brew
+        </button>
+      </h1>
+
       <img src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
     </div>
   </div>
@@ -24,22 +54,46 @@
 <script>
   export default {
     name: 'brew',
+    props: {
+      prepareNewBrew: Function
+    },
     data () {
       return {
         status: "brewing"
       }
     },
     methods: {
+      enjoyYourDrink() {
+        this.stopSingleBell()
+        this.status = "drinking"
+      },
       startCooling() {
+        this.stopBells()
         this.status = "cooling"
 
         setTimeout(() => {
           this.status = "ready"
+          this.playSingleBell()
         }, 3000)
+      },
+      playBells() {
+        this.$refs.Bells.play()
+      },
+      stopBells() {
+        this.$refs.Bells.pause()
+        this.$refs.Bells.currentTime = 0
+      },
+      playSingleBell() {
+        this.$refs.SingleBell.play()
+      },
+      stopSingleBell() {
+        this.$refs.SingleBell.pause()
+        this.$refs.SingleBell.currentTime = 0
       }
     },
     mounted() {
       setTimeout(() => {
+        this.playBells()
         this.status = "removeLeaves"
       }, 3000)
     }

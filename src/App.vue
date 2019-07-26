@@ -24,7 +24,12 @@
           </div>
         </section>
 
-        <component class="has-text-centered" :is="step" :nextStep="nextStep" :brewFor="brewFor" />
+        <component
+          class="has-text-centered"
+          :is="step"
+          :nextStep="nextStep"
+          :brewFor="brewFor"
+          :prepareNewBrew="prepareNewBrew" />
       </div>
       <div class="column" />
     </div>
@@ -50,6 +55,9 @@
       }
     },
     methods: {
+      prepareNewBrew() {
+        this.step = "prepare"
+      },
       nextStep() {
         this.step = "brew"
       }
