@@ -12,7 +12,7 @@
     </div>
     <div v-else-if="status === 'cooling'">
       <h1 class="title">Cooling down...</h1>
-      <img src="./assets/thought-catalog-OJZB0VUQKKc-unsplash.jpg">
+      <img src="./assets/chinese-tea-2651717_1920.jpg">
     </div>
     <div v-else-if="status === 'ready'">
       <h1 class="title"><button class="button is-primary">Stop the bell</button> and enjoy your drink</h1>
