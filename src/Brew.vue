@@ -5,7 +5,7 @@
       <img src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg">
     </div>
     <div v-else-if="status === 'removeLeaves'">
-      <h1 class="title">Please remove leaves/beans and
+      <h1 class="title">Separate leaves and brew and
         <button class="button is-primary" @click="startCooling">proceed to cooling</button>
       </h1>
       <img src="./assets/stock-photo-glass-filter-kettle-451220128.jpg">
