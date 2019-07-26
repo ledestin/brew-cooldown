@@ -17,7 +17,7 @@
               <div class="field">
                 <label class="label">Cooldown time (includes brew time)</label>
                 <div class="control">
-                  <input type="number" class="input" ref="totalTime" v-model="totalTime" />
+                  <input type="number" class="input" ref="cooldownFor" v-model="cooldownFor" />
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@
       return {
         step: "prepare",
         brewFor: 3,
-        totalTime: 10,
+        cooldownFor: 10,
         msg: 'Welcome to Your Vue.js App'
       }
     },
