@@ -21,7 +21,7 @@
       <h1 class="title">Separate leaves and brew and
         <button class="button is-primary" @click="startCooling">proceed to cooling</button>
       </h1>
-      <img src="./assets/stock-photo-glass-filter-kettle-451220128.jpg">
+      <img src="./assets/afternoon-beverage-break-1549706.jpg">
     </div>
     <div v-else-if="status === 'cooling'">
       <h1 class="title">Cooling down...</h1>
