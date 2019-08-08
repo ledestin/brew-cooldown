@@ -1,10 +1,13 @@
 <template>
   <div>
     <section class="hero is-light">
-       <div class="hero-body">
+       <div class="hero-body has-text-centered">
          <div class="container">
-           <h2 class="subtitle has-text-centered is-6">
-             Brew your drink and wait for it to cool down
+           <h1 class="title is-6">
+             <a class="has-text-black" href="/">Brew Cooldown</a>
+           </h1>
+           <h2 class="subtitle is-6">
+              Brew your drink and wait for it to cool down
            </h2>
          </div>
         </div>
