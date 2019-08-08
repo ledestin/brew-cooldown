@@ -15,8 +15,7 @@
 
     <div id="app" class="container">
       <div class="columns">
-        <div class="column" />
-        <div class="column is-three-fifths">
+        <div class="column is-three-fifths is-offset-one-fifth">
           <section class="section">
             <div class="columns">
               <div class="column">
@@ -46,7 +45,6 @@
             :cooldownForSeconds="cooldownForSeconds"
             :prepareNewBrew="prepareNewBrew" />
         </div>
-        <div class="column"/>
       </div>
     </div>
   </div>
