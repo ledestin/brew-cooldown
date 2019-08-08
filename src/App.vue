@@ -1,38 +1,50 @@
 <template>
-  <div id="app" class="container">
-    <div class="columns">
-      <div class="column" />
-      <div class="column is-three-fifths">
-        <section class="section">
-          <div class="columns">
-            <div class="column">
-              <div class="field">
-                <label class="label">Brew for</label>
-                <div class="control">
-                  <input type="number" class="input" ref="brewFor" v-model="brewFor" />
-                </div>
-              </div>
-            </div>
-            <div class="column">
-              <div class="field">
-                <label class="label">Cooldown time (includes brewing time)</label>
-                <div class="control">
-                  <input type="number" class="input" ref="cooldownFor" v-model="cooldownFor" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+  <div>
+    <section class="hero is-light">
+       <div class="hero-body">
+         <div class="container">
+           <h2 class="subtitle has-text-centered is-6">
+             Brew your drink and wait for it to cool down
+           </h2>
+         </div>
+        </div>
+    </section>
 
-        <component
-          class="has-text-centered"
-          :is="step"
-          :nextStep="nextStep"
-          :brewForSeconds="brewForSeconds"
-          :cooldownForSeconds="cooldownForSeconds"
-          :prepareNewBrew="prepareNewBrew" />
+    <div id="app" class="container">
+      <div class="columns">
+        <div class="column" />
+        <div class="column is-three-fifths">
+          <section class="section">
+            <div class="columns">
+              <div class="column">
+                <div class="field">
+                  <label class="label">Brew for</label>
+                  <div class="control">
+                    <input type="number" class="input" ref="brewFor" v-model="brewFor" />
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label">Cooldown time (includes brewing time)</label>
+                  <div class="control">
+                    <input type="number" class="input" ref="cooldownFor" v-model="cooldownFor" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <component
+            class="has-text-centered"
+            :is="step"
+            :nextStep="nextStep"
+            :brewForSeconds="brewForSeconds"
+            :cooldownForSeconds="cooldownForSeconds"
+            :prepareNewBrew="prepareNewBrew" />
+        </div>
+        <div class="column"/>
       </div>
-      <div class="column" />
     </div>
   </div>
 </template>
@@ -77,6 +89,10 @@
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+.hero-body {
+  padding: 0.5rem 0.5rem;
 }
 
 a {
