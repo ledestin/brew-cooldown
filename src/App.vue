@@ -4,7 +4,7 @@
        <div class="hero-body has-text-centered">
          <div class="container">
            <h1 class="title is-6">
-             <a class="has-text-black" href="/">Brew Cooldown</a>
+             <a class="has-text-grey-darker" href="/">Brew Cooldown</a>
            </h1>
            <h2 class="subtitle is-6">
               Brew your drink and wait for it to cool down
