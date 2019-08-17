@@ -6,7 +6,7 @@
            <h1 class="title is-6">
              <a class="has-text-grey-darker" href="/">Brew Cooldown</a>
            </h1>
-           <h2 class="subtitle is-6">
+           <h2 class="subtitle is-6 has-text-grey-darker">
               Brew your drink and wait for it to cool down
            </h2>
          </div>
