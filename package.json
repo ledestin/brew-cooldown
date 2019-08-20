@@ -3,7 +3,7 @@
   "description": "A timer for brewing that supports waiting for brew to cooldown",
   "version": "1.0.0",
   "author": "Dmitry Maksyoma <ledestin@gmail.com>",
-  "license": "MIT",
+  "license": "Proprietary",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
