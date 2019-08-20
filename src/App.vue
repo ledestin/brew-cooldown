@@ -76,13 +76,49 @@
         return this.cooldownFor * 60
       }
     },
+    watch: {
+      brewFor(oldValue, newValue) {
+        this.saveData()
+      },
+      cooldownFor(oldValue, newValue) {
+        this.saveData()
+      }
+    },
     methods: {
       prepareNewBrew() {
         this.step = "prepare"
       },
       nextStep() {
         this.step = "brew"
+      },
+      isStorageAvailable() {
+        return typeof(Storage) !== "undefined"
+      },
+      saveData() {
+        if (!this.isStorageAvailable())
+          return
+
+        window.localStorage.setItem("brewFor", this.brewFor)
+        window.localStorage.setItem("cooldownFor", this.cooldownFor)
+      },
+      loadData() {
+        if (!this.isStorageAvailable())
+          return
+
+        this.loadVariable("brewFor")
+        this.loadVariable("cooldownFor")
+      },
+      loadVariable(name) {
+        const value = window.localStorage.getItem(name)
+        const number = Number.parseInt(value)
+        if (Number.isNaN(number))
+          return
+
+        this[name] = value
       }
+    },
+    mounted() {
+      this.loadData()
     }
   }
 </script>
