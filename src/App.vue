@@ -22,7 +22,12 @@
                 <div class="field">
                   <label class="label">Brew for</label>
                   <div class="control">
-                    <input type="number" class="input" ref="brewFor" v-model="brewFor" />
+                    <input
+                      type="number"
+                      class="input"
+                      ref="brewFor"
+                      v-model="brewFor"
+                      :disabled="step !== 'prepare'" />
                   </div>
                 </div>
               </div>
@@ -30,7 +35,12 @@
                 <div class="field">
                   <label class="label">Cooldown for (includes brewing time)</label>
                   <div class="control">
-                    <input type="number" class="input" ref="cooldownFor" v-model="cooldownFor" />
+                    <input
+                      type="number"
+                      class="input"
+                      ref="cooldownFor"
+                      v-model="cooldownFor"
+                      :disabled="step !== 'prepare'" />
                   </div>
                 </div>
               </div>
