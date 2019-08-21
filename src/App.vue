@@ -26,7 +26,7 @@
                       type="number"
                       class="input"
                       ref="brewFor"
-                      v-model="brewFor"
+                      v-model.number="brewFor"
                       :disabled="step !== 'prepare'" />
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                       type="number"
                       class="input"
                       ref="cooldownFor"
-                      v-model="cooldownFor"
+                      v-model.number="cooldownFor"
                       :disabled="step !== 'prepare'" />
                   </div>
                 </div>
@@ -124,7 +124,7 @@
         if (Number.isNaN(number))
           return
 
-        this[name] = value
+        this[name] = number
       }
     },
     mounted() {
