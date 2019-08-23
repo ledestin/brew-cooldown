@@ -142,10 +142,6 @@
   padding: 0.5rem 0.5rem;
 }
 
-a {
-  color: #42b983;
-}
-
 img {
   object-fit: cover;
   height: 60vh;
