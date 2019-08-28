@@ -67,8 +67,7 @@
         step: "prepare",
         brewFor: 3,
         cooldownFor: 10,
-        errorMessage: "",
-        msg: 'Welcome to Your Vue.js App'
+        errorMessage: ""
       }
     },
     computed: {
