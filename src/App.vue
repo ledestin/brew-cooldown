@@ -19,30 +19,16 @@
           <section class="section">
             <div class="columns">
               <div class="column">
-                <div class="field">
-                  <label class="label">Brew for</label>
-                  <div class="control">
-                    <input
-                      type="number"
-                      class="input"
-                      ref="brewFor"
-                      v-model.number="brewFor"
-                      :disabled="step !== 'prepare'" />
-                  </div>
-                </div>
+                <ValidatedInput id="brewFor" label="Brew for"
+                    v-model="brewFor"
+                    :disabled="step !== 'prepare'" />
               </div>
               <div class="column">
-                <div class="field">
-                  <label class="label">Cooldown for (includes brewing time)</label>
-                  <div class="control">
-                    <input
-                      type="number"
-                      class="input"
-                      ref="cooldownFor"
-                      v-model.number="cooldownFor"
-                      :disabled="step !== 'prepare'" />
-                  </div>
-                </div>
+                <ValidatedInput
+                  id="cooldownFor"
+                  label="Cooldown for (includes brewing time)"
+                  v-model="cooldownFor"
+                  :disabled="step !== 'prepare'" />
               </div>
             </div>
           </section>
@@ -63,12 +49,14 @@
 <script>
   import Prepare from "./Prepare"
   import Brew from "./Brew"
+  import ValidatedInput from "./ValidatedInput"
 
   export default {
     name: 'app',
     components: {
       Prepare,
-      Brew
+      Brew,
+      ValidatedInput
     },
     data () {
       return {
