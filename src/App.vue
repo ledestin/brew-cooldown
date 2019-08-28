@@ -19,9 +19,12 @@
           <section class="section">
             <div class="columns">
               <div class="column">
-                <ValidatedInput id="brewFor" label="Brew for"
-                    v-model="brewFor"
-                    :disabled="step !== 'prepare'" />
+                <ValidatedInput
+                  id="brewFor"
+                  label="Brew for"
+                  v-model="brewFor"
+                  :errorMessage="errorMessage"
+                  :disabled="step !== 'prepare'" />
               </div>
               <div class="column">
                 <ValidatedInput
@@ -39,7 +42,8 @@
             :nextStep="nextStep"
             :brewForSeconds="brewForSeconds"
             :cooldownForSeconds="cooldownForSeconds"
-            :prepareNewBrew="prepareNewBrew" />
+            :prepareNewBrew="prepareNewBrew"
+            :disableProgress="!!errorMessage"/>
         </div>
       </div>
     </div>
@@ -63,6 +67,7 @@
         step: "prepare",
         brewFor: 3,
         cooldownFor: 10,
+        errorMessage: "",
         msg: 'Welcome to Your Vue.js App'
       }
     },
@@ -76,9 +81,11 @@
     },
     watch: {
       brewFor(oldValue, newValue) {
+        this.validate()
         this.saveData()
       },
       cooldownFor(oldValue, newValue) {
+        this.validate()
         this.saveData()
       }
     },
@@ -91,6 +98,14 @@
       },
       isStorageAvailable() {
         return typeof(Storage) !== "undefined"
+      },
+      validate() {
+        if (this.brewFor <= this.cooldownFor) {
+          this.errorMessage = ""
+          return
+        }
+
+        this.errorMessage = "Can't brew longer than total time"
       },
       saveData() {
         if (!this.isStorageAvailable())
