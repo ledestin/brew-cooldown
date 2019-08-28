@@ -22,7 +22,7 @@
                 <ValidatedInput
                   id="brewFor"
                   label="Brew for"
-                  v-model="brewFor"
+                  v-model.number="brewFor"
                   :errorMessage="errorMessage"
                   :disabled="step !== 'prepare'" />
               </div>
@@ -30,7 +30,7 @@
                 <ValidatedInput
                   id="cooldownFor"
                   label="Cooldown for (includes brewing time)"
-                  v-model="cooldownFor"
+                  v-model.number="cooldownFor"
                   :disabled="step !== 'prepare'" />
               </div>
             </div>
