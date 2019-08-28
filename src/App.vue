@@ -134,10 +134,6 @@
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
-
 .hero-body {
   padding: 0.5rem 0.5rem;
 }
