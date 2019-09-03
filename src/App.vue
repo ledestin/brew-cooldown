@@ -135,12 +135,12 @@
   }
 </script>
 
-<style>
-.hero-body {
+<style lang="scss">
+div.hero-body {
   padding: 0.5rem 0.5rem;
 }
 
-img {
+div img {
   object-fit: cover;
   height: 60vh;
   width: 400px;
