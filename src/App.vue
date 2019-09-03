@@ -136,11 +136,11 @@
 </script>
 
 <style lang="scss">
-div.hero-body {
+.hero-body {
   padding: 0.5rem 0.5rem;
 }
 
-div img {
+img {
   object-fit: cover;
   height: 60vh;
   width: 400px;
