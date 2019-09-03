@@ -135,7 +135,7 @@
   }
 </script>
 
-<style lang="scss">
+<style>
 .hero-body {
   padding: 0.5rem 0.5rem;
 }
