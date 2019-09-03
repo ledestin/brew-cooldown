@@ -27,7 +27,7 @@
   }
 </script>
 
-<style scope>
+<style>
 input[type=range] {
   width: 100%;
 }
