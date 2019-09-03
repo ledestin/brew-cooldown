@@ -8,6 +8,12 @@
         type="number"
         class="input"
         :value="value" @input="$emit('input', $event.target.value)" />
+      <input
+        type="range"
+        min="1"
+        max="30"
+        :value="value"
+        @input="$emit('input', $event.target.value)">
       <p v-if="errorMessage" class="has-text-danger is-size-7">
         {{ errorMessage }}
       </p>
@@ -20,3 +26,9 @@
     props: ['id', 'label', 'value', 'errorMessage']
   }
 </script>
+
+<style scope>
+input[type=range] {
+  width: 100%;
+}
+</style>
