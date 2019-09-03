@@ -10,6 +10,7 @@
         :value="value" @input="$emit('input', $event.target.value)" />
       <input
         type="range"
+        :disabled="disabled"
         min="1"
         max="30"
         :value="value"
@@ -23,7 +24,7 @@
 
 <script>
   export default {
-    props: ['id', 'label', 'value', 'errorMessage']
+    props: ['id', 'label', 'value', 'errorMessage', 'disabled']
   }
 </script>
 
