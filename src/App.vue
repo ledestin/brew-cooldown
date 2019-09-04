@@ -137,6 +137,7 @@
 
 <style lang="scss">
 .hero-body {
+  background-color: #f1d6ab;
   padding: 0.5rem 0.5rem;
 }
 
