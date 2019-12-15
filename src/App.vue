@@ -22,7 +22,7 @@
                 <ValidatedInput
                   id="brewFor"
                   label="Brew for"
-                  v-model.number="brewFor"
+                  v-model="brewFor"
                   :errorMessage="errorMessage"
                   :disabled="step !== 'prepare'" />
               </div>
@@ -30,7 +30,7 @@
                 <ValidatedInput
                   id="cooldownFor"
                   label="Cooldown for (includes brewing time)"
-                  v-model.number="cooldownFor"
+                  v-model="cooldownFor"
                   :disabled="step !== 'prepare'" />
               </div>
             </div>
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+  import duration from "./duration"
   import Prepare from "./Prepare"
   import Brew from "./Brew"
   import ValidatedInput from "./ValidatedInput"
@@ -65,17 +66,17 @@
     data () {
       return {
         step: "prepare",
-        brewFor: 3,
-        cooldownFor: 10,
+        brewFor: "3:00",
+        cooldownFor: "10:00",
         errorMessage: ""
       }
     },
     computed: {
       brewForSeconds() {
-        return this.brewFor * 60
+        return this.durationToSeconds(this.brewFor)
       },
       cooldownForSeconds() {
-        return this.cooldownFor * 60
+        return this.durationToSeconds(this.cooldownFor)
       }
     },
     watch: {
@@ -89,6 +90,7 @@
       }
     },
     methods: {
+      ...duration,
       prepareNewBrew() {
         this.step = "prepare"
       },
@@ -99,7 +101,7 @@
         return typeof(Storage) !== "undefined"
       },
       validate() {
-        if (this.brewFor <= this.cooldownFor) {
+        if (this.brewForSeconds <= this.cooldownForSeconds) {
           this.errorMessage = ""
           return
         }
@@ -117,16 +119,8 @@
         if (!this.isStorageAvailable())
           return
 
-        this.loadVariable("brewFor")
-        this.loadVariable("cooldownFor")
-      },
-      loadVariable(name) {
-        const value = window.localStorage.getItem(name)
-        const number = Number.parseInt(value)
-        if (Number.isNaN(number))
-          return
-
-        this[name] = number
+        this.brewFor = window.localStorage.getItem("brewFor")
+        this.cooldownFor = window.localStorage.getItem("cooldownFor")
       }
     },
     mounted() {

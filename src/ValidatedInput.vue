@@ -2,19 +2,22 @@
   <div class="field">
     <label :for="id" class="label">{{ label }}</label>
     <div class="control">
-      <input
+      <vue-regex-input
         :id="id"
         v-bind="$attrs"
-        type="number"
         class="input"
-        :value="value" @input="$emit('input', $event.target.value)" />
+        :regExp="/^\d{0,2}:\d{0,2}$/g"
+        :value="value"
+        @input="handleInput"
+      />
       <input
         type="range"
         v-bind="$attrs"
-        min="1"
-        max="30"
-        :value="value"
-        @input="$emit('input', $event.target.value)">
+        min="0"
+        max="1800"
+        step="15"
+        :value="valueInSeconds"
+        @input="$emit('input', secondsToDuration($event.target.value))">
       <p v-if="errorMessage" class="has-text-danger is-size-7">
         {{ errorMessage }}
       </p>
@@ -23,8 +26,26 @@
 </template>
 
 <script>
+  import duration from "./duration"
+  import VueRegexInput from "vue-regex-input"
+
   export default {
-    props: ['id', 'label', 'value', 'errorMessage']
+    props: ['id', 'label', 'value', 'errorMessage'],
+    components: {
+      VueRegexInput
+    },
+    computed: {
+      valueInSeconds() {
+        return this.durationToSeconds(this.value)
+      },
+    },
+    methods: {
+      ...duration,
+
+      handleInput(value) {
+        this.$emit('input', value)
+      }
+    }
   }
 </script>
 
