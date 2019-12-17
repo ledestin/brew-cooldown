@@ -119,8 +119,15 @@
         if (!this.isStorageAvailable())
           return
 
-        this.brewFor = window.localStorage.getItem("brewFor")
-        this.cooldownFor = window.localStorage.getItem("cooldownFor")
+        this.loadItem("brewFor")
+        this.loadItem("cooldownFor")
+      },
+      loadItem(name) {
+        const gotValue = window.localStorage.getItem(name)
+        if (!gotValue)
+          return
+
+        this[name] = gotValue
       }
     },
     mounted() {
