@@ -4413,6 +4413,11 @@ signal-exit@^3.0.0:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+simple-web-notification@^1.0.32:
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/simple-web-notification/-/simple-web-notification-1.0.32.tgz#b1ce30d125e12404fa871a51a3fc9b6c951dc8ac"
+  integrity sha512-erzXkT6YxV2fsXyEkQYBDsreu2wzhhtt4dmzc5bYxA0mCcZJ8GCHhOem0/Qv5NbyyiaMJMT5dXTaBcI8V54nAA==
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"

@@ -52,6 +52,8 @@
 </template>
 
 <script>
+  import webNotification from "simple-web-notification"
+
   export default {
     name: 'brew',
     props: {
@@ -66,10 +68,16 @@
     },
     methods: {
       enjoyYourDrink() {
+        if (this.status !== "ready")
+          return
+
         this.stopSingleBell()
         this.status = "drinking"
       },
       startCooling() {
+        if (this.status !== "removeLeaves")
+          return
+
         this.stopBells()
         this.status = "cooling"
       },
@@ -86,18 +94,40 @@
       stopSingleBell() {
         this.$refs.SingleBell.pause()
         this.$refs.SingleBell.currentTime = 0
+      },
+      showRemoveLeavesNotification() {
+        const that = this
+
+        webNotification.showNotification('Brew Cooldown', {
+          body: "Separate leaves and the brew",
+          onClick() {
+            that.startCooling()
+          }
+        })
+      },
+      showDrinkIsReadyNotification() {
+        const that = this
+
+        webNotification.showNotification('Brew Cooldown', {
+          body: "Your drink is ready",
+          onClick() {
+            that.enjoyYourDrink()
+          }
+        })
       }
     },
     mounted() {
       setTimeout(() => {
         this.playBells()
         this.status = "removeLeaves"
+        this.showRemoveLeavesNotification()
       }, this.brewForSeconds * 1000)
 
       setTimeout(() => {
         this.status = "ready"
         this.stopBells()
         this.playSingleBell()
+        this.showDrinkIsReadyNotification()
       }, this.cooldownForSeconds * 1000)
     }
   }
