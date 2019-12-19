@@ -95,25 +95,23 @@
         this.$refs.SingleBell.pause()
         this.$refs.SingleBell.currentTime = 0
       },
-      showRemoveLeavesNotification() {
-        const that = this
-
-        webNotification.showNotification('Brew Cooldown', {
-          body: "Separate leaves and the brew",
-          onClick() {
-            that.startCooling()
-          }
+      showNotification(message, body, onClick) {
+        webNotification.showNotification(message, {
+          body,
+          onClick,
+          icon: "/static/android-icon-192x192.png",
         })
       },
+      showRemoveLeavesNotification() {
+        this.showNotification("Brewing is over",
+          "Separate leaves and the brew",
+          () => this.startCooling()
+        )
+      },
       showDrinkIsReadyNotification() {
-        const that = this
-
-        webNotification.showNotification('Brew Cooldown', {
-          body: "Your drink is ready",
-          onClick() {
-            that.enjoyYourDrink()
-          }
-        })
+        this.showNotification("Your drink is ready", "Enjoy!",
+          () => that.enjoyYourDrink()
+        )
       }
     },
     mounted() {
