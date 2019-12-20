@@ -110,7 +110,7 @@
       },
       showDrinkIsReadyNotification() {
         this.showNotification("Your drink is ready", "Enjoy!",
-          () => that.enjoyYourDrink()
+          () => this.enjoyYourDrink()
         )
       }
     },
