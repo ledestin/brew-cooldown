@@ -15,17 +15,26 @@
 
     <div v-if="status === 'brewing'">
       <h1 class="title">Brewing...</h1>
-      <img src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg">
+      <img
+        src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg"
+        alt="Teabag brewing in a glass cup"
+      >
     </div>
     <div v-else-if="status === 'removeLeaves'">
       <h1 class="title">Separate leaves and brew and
         <button class="button is-primary" @click="startCooling">proceed to cooling</button>
       </h1>
-      <img src="./assets/afternoon-beverage-break-1549706.jpg">
+      <img
+        src="./assets/afternoon-beverage-break-1549706.jpg"
+        alt="Teapot pouring tea into a cup"
+      >
     </div>
     <div v-else-if="status === 'cooling'">
       <h1 class="title">Cooling down...</h1>
-      <img src="./assets/chinese-tea-2651717_1920.jpg">
+      <img
+        src="./assets/chinese-tea-2651717_1920.jpg"
+        alt="Teapot and two cups filled with tea"
+      >
     </div>
     <div v-else-if="status === 'ready'">
       <h1 class="title">
@@ -35,7 +44,10 @@
         </button>
         and enjoy your drink
       </h1>
-      <img src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
+      <img
+        src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg"
+        alt="Woman drinking tea from a white cup"
+      >
     </div>
     <div v-else-if="status === 'drinking'">
       <h1 class="title">

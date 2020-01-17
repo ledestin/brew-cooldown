@@ -10,7 +10,9 @@
         Start Brewing
       </button>
     </h2>
-    <img src="./assets/beverage-1869716_1920.jpg">
+    <img
+      src="./assets/beverage-1869716_1920.jpg"
+      alt="Kettle pouring hot water on tea leaves in gaiwan">
   </div>
 </template>
 
