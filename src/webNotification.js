@@ -8,7 +8,7 @@ const webNotificationProxy = new Proxy(webNotification, {
       return this[name]
     }
 
-    return instance.get(name)
+    return target.get(name)
   }
 })
 
