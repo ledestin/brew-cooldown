@@ -4,7 +4,7 @@
       Pour water on leaves and
       <button
         class="button is-primary"
-        @click="nextStep"
+        @click="startBrewing"
         :disabled="disableProgress"
       >
         Start Brewing
@@ -15,11 +15,19 @@
 </template>
 
 <script>
+  import myWebNotification from "./webNotification"
+
   export default {
     name: 'prepare',
     props: {
       nextStep: Function,
       disableProgress: Boolean
+    },
+    methods: {
+      startBrewing() {
+        myWebNotification.requestPermission()
+        this.nextStep()
+      }
     }
   }
 </script>
