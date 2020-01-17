@@ -86,11 +86,11 @@
       }
     },
     watch: {
-      brewFor(oldValue, newValue) {
+      brewFor() {
         this.validate()
         this.saveData()
       },
-      cooldownFor(oldValue, newValue) {
+      cooldownFor() {
         this.validate()
         this.saveData()
       }
