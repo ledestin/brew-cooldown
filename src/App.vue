@@ -3,6 +3,10 @@
     <section class="hero is-light">
        <div class="hero-body has-text-centered">
          <div class="container">
+           <div v-if="isMobile" class="notification is-warning">
+             Warning: this webapp isn't mobile-ready.
+           </div>
+
            <h1 class="title is-6">
              <a class="has-text-grey-darker" href="/">Brew Cooldown</a>
            </h1>
@@ -51,6 +55,7 @@
 </template>
 
 <script>
+  import isMobile from 'ismobilejs';
   import duration from "./duration"
   import Prepare from "./Prepare"
   import Brew from "./Brew"
@@ -68,7 +73,8 @@
         step: "prepare",
         brewFor: "3:00",
         cooldownFor: "10:00",
-        errorMessage: ""
+        errorMessage: "",
+        isMobile: isMobile().any
       }
     },
     computed: {
