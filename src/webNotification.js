@@ -4,11 +4,11 @@ const webNotificationProxy = new Proxy(webNotification, {
   requestPermission: webNotification.requestPermission.bind(this, () => {}),
 
   get(target, name) {
-    if (name in this) {
+    if (this.hasOwnProperty(name)) {
       return this[name]
     }
 
-    return target.get(name)
+    return target[name]
   }
 })
 
