@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import myWebNotification from "./webNotification"
+  import webNotification from "./webNotification"
 
   export default {
     name: 'prepare',
@@ -27,7 +27,7 @@
     },
     methods: {
       startBrewing() {
-        myWebNotification.requestPermission()
+        webNotification.requestPermission()
         this.nextStep()
       }
     }

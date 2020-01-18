@@ -64,7 +64,7 @@
 </template>
 
 <script>
-  import webNotification from "simple-web-notification"
+  import webNotification from "./webNotification"
 
   export default {
     name: 'brew',
