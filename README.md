@@ -2,6 +2,8 @@
 
 > A timer for brewing that supports waiting for brew to cooldown
 
+[Demo](https://brewcooldown.netlify.com/)
+
 ## Build Setup
 
 ``` bash
