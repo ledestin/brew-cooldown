@@ -11,7 +11,7 @@
       </button>
     </h2>
     <img
-      src="./assets/beverage-1869716_1920.jpg"
+      src="./assets/beverage-1869716_1230.jpg"
       alt="Kettle pouring hot water on tea leaves in gaiwan">
   </div>
 </template>
