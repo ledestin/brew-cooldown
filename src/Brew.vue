@@ -16,6 +16,7 @@
     <div v-if="status === 'brewing'">
       <h1 class="title">Brewing...</h1>
       <img
+        class="stepDescribingImage"
         src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg"
         alt="Teabag brewing in a glass cup"
       >
@@ -25,6 +26,7 @@
         <button class="button is-primary" @click="startCooling">proceed to cooling</button>
       </h1>
       <img
+        class="stepDescribingImage"
         src="./assets/afternoon-beverage-break-1549706.jpg"
         alt="Teapot pouring tea into a cup"
       >
@@ -32,6 +34,7 @@
     <div v-else-if="status === 'cooling'">
       <h1 class="title">Cooling down...</h1>
       <img
+        class="stepDescribingImage"
         src="./assets/chinese-tea-2651717_1920.jpg"
         alt="Teapot and two cups filled with tea"
       >
@@ -45,6 +48,7 @@
         and enjoy your drink
       </h1>
       <img
+        class="stepDescribingImage"
         src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg"
         alt="Woman drinking tea from a white cup"
       >
@@ -58,7 +62,9 @@
         </button>
       </h1>
 
-      <img src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
+      <img
+        class="stepDescribingImage"
+        src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
     </div>
   </div>
 </template>

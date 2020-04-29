@@ -11,6 +11,7 @@
       </button>
     </h2>
     <img
+      class="stepDescribingImage"
       src="./assets/beverage-1869716_1230.jpg"
       alt="Kettle pouring hot water on tea leaves in gaiwan">
   </div>
