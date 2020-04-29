@@ -24,12 +24,11 @@
       <div id="navbarMenu" class="navbar-menu"
            v-bind:class="{ 'is-active': isActive }">
         <div class="navbar-start">
-          <a class="navbar-item">
             <router-link
+              class="navbar-item"
               to="/about"
               @click.native="isActive = !isActive">About
             </router-link>
-          </a>
 
          <a class="navbar-item">
            Help
