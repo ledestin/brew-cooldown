@@ -10,18 +10,21 @@
         Start Brewing
       </button>
     </h2>
-    <img
-      class="stepDescribingImage"
-      src="./assets/beverage-1869716_1230.jpg"
-      alt="Kettle pouring hot water on tea leaves in gaiwan">
+    <StepImage
+      image="beverage-1869716_1230.jpg"
+      alt="Kettle pouring hot water on tea leaves in gaiwan" />
   </div>
 </template>
 
 <script>
   import webNotification from "./webNotification"
+  import StepImage from "./StepImage"
 
   export default {
     name: 'prepare',
+    components: {
+      StepImage
+    },
     props: {
       nextStep: Function,
       disableProgress: Boolean

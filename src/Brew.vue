@@ -15,29 +15,26 @@
 
     <div v-if="status === 'brewing'">
       <h1 class="title">Brewing...</h1>
-      <img
-        class="stepDescribingImage"
-        src="./assets/nathan-dumlao-vJY0GVb1SaA-unsplash.jpg"
+      <StepImage
+        image="nathan-dumlao-vJY0GVb1SaA-unsplash.jpg"
         alt="Teabag brewing in a glass cup"
-      >
+      />
     </div>
     <div v-else-if="status === 'removeLeaves'">
       <h1 class="title">Separate leaves and brew and
         <button class="button is-primary" @click="startCooling">proceed to cooling</button>
       </h1>
-      <img
-        class="stepDescribingImage"
-        src="./assets/afternoon-beverage-break-1549706.jpg"
+      <StepImage
+        image="afternoon-beverage-break-1549706_1200.jpg"
         alt="Teapot pouring tea into a cup"
-      >
+      />
     </div>
     <div v-else-if="status === 'cooling'">
       <h1 class="title">Cooling down...</h1>
-      <img
-        class="stepDescribingImage"
-        src="./assets/chinese-tea-2651717_1920.jpg"
+      <StepImage
+        image="chinese-tea-2651717_1200.jpg"
         alt="Teapot and two cups filled with tea"
-      >
+      />
     </div>
     <div v-else-if="status === 'ready'">
       <h1 class="title">
@@ -47,11 +44,10 @@
         </button>
         and enjoy your drink
       </h1>
-      <img
-        class="stepDescribingImage"
-        src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg"
+      <StepImage
+        image="bibarys-ibatolla-Mq0jFE_HDJc-unsplash_1200.jpg"
         alt="Woman drinking tea from a white cup"
-      >
+      />
     </div>
     <div v-else-if="status === 'drinking'">
       <h1 class="title">
@@ -62,18 +58,20 @@
         </button>
       </h1>
 
-      <img
-        class="stepDescribingImage"
-        src="./assets/bibarys-ibatolla-Mq0jFE_HDJc-unsplash.jpg">
+      <StepImage image="bibarys-ibatolla-Mq0jFE_HDJc-unsplash_1200.jpg" />
     </div>
   </div>
 </template>
 
 <script>
   import webNotification from "./webNotification"
+  import StepImage from "./StepImage"
 
   export default {
     name: 'brew',
+    components: {
+      StepImage
+    },
     props: {
       prepareNewBrew: Function,
       brewForSeconds: Number,
