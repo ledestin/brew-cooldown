@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="title">Brewing hot drinks?</div>
-    <div class="title">This app tells you, when your
-      drink stops being scalding hot and when to stop brewing.</div>
+  <div class="has-margin-top-20">
+    <p class="title is-1">Brewing hot drinks? ☕</p>
+    <p class="title is-2">This app tells you, when your
+      drink stops being scalding hot, and when to stop brewing.</p>
   </div>
 </template>
