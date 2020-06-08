@@ -1,9 +1,9 @@
 import VueRouter from 'vue-router'
-import About from "./About"
+import Home from "./Home"
 import Brewer from "./Brewer"
 
 const routes = [
-  { path: '/', component: About},
+  { path: '/', component: Home},
   { path: '/brew-it', component: Brewer}
 ]
 
