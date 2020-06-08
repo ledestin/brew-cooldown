@@ -6,7 +6,7 @@
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <router-link class="navbar-item has-text-dark" to="/">
+        <router-link exact class="navbar-item has-text-dark" to="/">
           <img src="/static/ms-icon-310x310.png">
           <span class="is-size-4 has-text-weight-medium">Brew Cooldown</span>
         </router-link>
@@ -28,3 +28,11 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+@import "bulma/sass/utilities/_all.sass";
+
+.navbar-brand .navbar-item.is-active:nth-child(n+2) {
+  background-color: $grey-lighter;
+}
+</style>
