@@ -8,3 +8,7 @@ $grey-darker: #38470b;
 $section-padding: 1.5rem 1.5rem;
 
 @import "~bulma/bulma";
+
+.has-text-primary-light {
+  color: lighten($primary, 13%);
+}
