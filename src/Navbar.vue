@@ -13,7 +13,7 @@
 
         <router-link
           class="navbar-item"
-          to="/brew-it">Brew it
+          to="/brew-it">Brew your drink
         </router-link>
       </div>
     </nav>
