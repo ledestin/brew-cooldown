@@ -28,11 +28,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-@import "bulma/sass/utilities/_all.sass";
-
-.navbar-brand .navbar-item.is-active:nth-child(n+2) {
-  background-color: $grey-lighter;
-}
-</style>
