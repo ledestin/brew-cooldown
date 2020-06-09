@@ -15,6 +15,12 @@
           class="navbar-item has-text-dark"
           to="/brew-it">Brew your drink
         </router-link>
+
+        <div class="navbar-item">
+          Provided by
+          <a class="pl-1"
+             href="https://rubyclarity.com/consulting/">Ruby Clarity</a>
+        </div>
       </div>
     </nav>
   </div>
