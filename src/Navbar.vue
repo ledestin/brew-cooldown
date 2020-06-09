@@ -12,7 +12,7 @@
         </router-link>
 
         <router-link
-          class="navbar-item"
+          class="navbar-item has-text-dark"
           to="/brew-it">Brew your drink
         </router-link>
       </div>
