@@ -4,7 +4,7 @@
     <p class="title is-2">This app tells you, when your
       drink stops being scalding hot, and when to stop brewing.
     <span class="has-text-centered">
-      <router-link to="/brew-it" class="has-text-primary-light">
+      <router-link to="/brew-it" class="has-text-primary-custom-light">
         Start brewing.
       </router-link>
     </span>
