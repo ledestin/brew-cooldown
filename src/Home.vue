@@ -1,5 +1,5 @@
 <template>
-  <div class="has-margin-top-20">
+  <div class="has-margin-top-20 has-text-centered">
     <p class="title is-1">Brewing hot drinks? ☕</p>
     <p class="title is-2">This app tells you, when your
       drink stops being scalding hot, and when to stop brewing.
