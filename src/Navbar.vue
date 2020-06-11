@@ -20,6 +20,14 @@
           href="mailto:ledestin@gmail.com?subject=Brew Cooldown">Contact
         </a>
       </div>
+
+      <div class="navbar-end">
+	<div class="navbar-item has-text-centered">
+	  <p>Brought to you by
+	    <a href="https://twitter.com/oledestin" target="_blank">Dmitry</a>
+	  </p>
+	</div>
+      </div>
     </nav>
   </div>
 </template>

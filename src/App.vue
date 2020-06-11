@@ -9,11 +9,6 @@
         </div>
       </div>
     </div>
-
-    <div class="has-text-centered">
-      Brought to you by
-      <a href="https://twitter.com/oledestin" target="_blank">Dmitry</a>
-    </div>
   </div>
 </template>
 
