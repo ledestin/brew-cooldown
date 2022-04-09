@@ -15,7 +15,7 @@
     "bulma-helpers": "^0.3.10",
     "core-js": "^3.4.4",
     "ismobilejs": "^1.0.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-duration-format": "^2.3.2",
     "simple-web-notification": "^1.0.32",
     "vue": "^2.6.10",
